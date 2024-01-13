@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-const {studentsignup,studentsignin,studentsignout, homepage } = require("../controllers/indexControllers");
+const {homepage,studentsignup,studentsignin,studentsignout,currentUser,studentsendmail,studentforgetlink,studentresetpassword,studentupdate,studentavatar } = require("../controllers/indexControllers");
+const { isAuthenticated } = require("../middlewares/auth");
 
 
-// Get / Route
+// Get / Homepage
 router.get("/", homepage);
 
+// POST /Student 
+router.post("/student",isAuthenticated, currentUser);
 // POST / Student /signup
 router.post("/student/signup", studentsignup)
 
@@ -14,6 +17,21 @@ router.post("/student/signup", studentsignup)
 router.post("/student/signin", studentsignin)
 
 // GET / Student /signout
-router.get("/student/signout", studentsignout)
+router.get("/student/signout",isAuthenticated, studentsignout)
+
+// POST / Student /Send Mail
+router.post("/student/send-mail", studentsendmail)
+
+// GET / Student /Forget-link/:studentid
+router.get("/student/forget-link/:id", studentforgetlink);
+
+// POST / Student /reset-password/studentid
+router.post("/student/reset-password/:id",isAuthenticated, studentresetpassword);
+
+// POST / Student /update/studentid
+router.post("/student/update/:id",isAuthenticated, studentupdate);
+
+// POST / Student /avatar/studentid
+router.post("/student/avatar/:id",isAuthenticated, studentavatar);
 
 module.exports = router;
