@@ -56,7 +56,7 @@ router.post("/avatar/:id",isAuthenticated,employeavatar);
 //  ....................Internships.................     
 
 // POST /employe /internship/create
-router.post("/internship/create",isAuthenticated,createinternship);
+router.post("/internship/created",isAuthenticated,createinternship);
 
 // POST /employe /internship/read
 router.post("/internship/read",isAuthenticated,readinternship);
@@ -67,7 +67,7 @@ router.post("/internship/read/:id",isAuthenticated,readsingleinternship);
 //  ....................jobs.................     
 
 // POST /employe /job/create
-router.post("/job/create",isAuthenticated,createjob);
+router.post("/job/created",isAuthenticated,createjob);
 
 // POST /employe /job/read
 router.post("/job/read",isAuthenticated,readjob);

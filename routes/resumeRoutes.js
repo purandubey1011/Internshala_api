@@ -1,16 +1,22 @@
 const express = require("express");
 const router = express.Router();
-const {resume,addeducation,editeducation,deleteeducation,addjobs,editjobs,deletejobs,addinternships,editinternships,deleteinternships,addresponsibilities,editresponsibilities,deleteresponsibilities,addcourses,editcourses,deletecourses,addprojects,editprojects,deleteprojects,addskills,editskills,deleteskills,addaccomplishments,editaccomplishments,deleteaccomplishments} = require("../controllers/resumeControllers");
+const {createResume, editResume ,resume,addeducation,editeducation,deleteeducation,addjobs,editjobs,deletejobs,addinternships,editinternships,deleteinternships,addresponsibilities,editresponsibilities,deleteresponsibilities,addcourses,editcourses,deletecourses,addprojects,editprojects,deleteprojects,addskills,editskills,deleteskills,addaccomplishments,editaccomplishments,deleteaccomplishments} = require("../controllers/resumeControllers");
 const { isAuthenticated } = require("../middlewares/auth");
 
 
 // Get / Homepage
 router.get("/", isAuthenticated,resume);
 
+// ....................Resume................
+router.post("/create", isAuthenticated,createResume);
+
+router.post("/update", isAuthenticated,editResume);
+
 // ....................Education................
 
 // POST / ADD EDUCATION
 router.post("/add-edu", isAuthenticated,addeducation);
+
 
 // POST / Edit EDUCATION
 router.post("/edit-edu/:eduid", isAuthenticated,editeducation);

@@ -6,6 +6,11 @@ const app = express();
 require("./models/database").connectDatabase();
 // const PORT = 3030;
 
+// CORS
+const cors = require("cors");
+app.use(cors({credentials: true, origin: true}))
+
+
 //logger
 const logger = require("morgan");
 const ErrorHandler = require("./utils/ErrorHandler");
@@ -29,7 +34,7 @@ const fileupload = require("express-fileupload");
 app.use(fileupload());
 
 //Routes
-app.use("/user",require("./routes/indexRoutes"));
+app.use("/",require("./routes/indexRoutes"));
 app.use("/resume",require("./routes/resumeRoutes"));
 app.use("/employe",require("./routes/employeRoutes"));
 

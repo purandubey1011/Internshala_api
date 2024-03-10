@@ -13,7 +13,7 @@ exports.sendMail = (req,res,next,url)=>{
     });
 
     const mailOptions = {
-        from : "vikash pvt. ltd.<vikashpal1039@gmail.com",
+        from : "The Arya Coding School <sundramjatav0577@gmail.com",
         to:req.body.email,
         subject:"password Reset Link",
         html:`<h1>click link below to reset password</h1>

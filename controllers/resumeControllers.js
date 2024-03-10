@@ -8,6 +8,26 @@ exports.resume = catchAsyncErrors(async function(req,res,next){
     res.json({message:"secure Resume Page!",resume})
 }); 
 
+// create resume
+exports.createResume = catchAsyncErrors(async (req,res)=>{
+    console.log(req.body)
+    const student = await Student.findById(req.id).exec();
+    student.resume = req.body
+    await student.save()
+    console.log({student})
+})
+
+exports.editResume = catchAsyncErrors(async (req,res)=>{
+    console.log(req.body)
+    const student = await Student.findById(req.id).exec();
+    const eduIndex = student.resume.findIndex((i)=>i.id === req.params.eduid);
+    student.resume[eduIndex] = {...student.resume[eduIndex] , ...req.body};
+    await student.save();
+    res.json({message:"Education Updated"});
+})
+
+
+
 //..................Education...................
 
 exports.addeducation = catchAsyncErrors(async function(req,res,next){

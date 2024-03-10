@@ -1,0 +1,76 @@
+resume: {
+    education: [
+        {
+            college: String,
+            startYear: String,
+            endYear:String,
+            degree: String,
+            stream: String,
+            percentage: String,
+            performance: String,
+            status12th: String,
+            completeYear12th: String,
+            Board12th: String,
+            percentage12th: String,
+            performance12th: String,
+            stream12th:String,
+            schoolName12th: String,
+            status10th: String,
+            completeYear10th:String,
+            Board10th: String,
+            percentage10th: String,
+            performance10th:String,
+            schoolName10th: String,
+        },
+    ],
+    jobs: [
+        {
+            jobDesignation: String,
+            jobProfile: String,
+            jobOrganization: String,
+            jobLocation: String,
+            jobStartDate: String,
+            jobEndDate: String,
+        }
+    ],
+    internships: [
+        {
+            internshipsProfile: String,
+            internshipsOrganization: String,
+            internshipsLocation: String,
+            internshipsStartDate: String,
+            internshipsEndDate: String,
+        }
+    ],
+    responsibilities: [
+        {
+            responsibilitiesDescription:String,
+        }
+    ],
+    courses: [
+        {
+            coursesDescription: String,
+            coursesTrainingProgram : String,
+            coursesOrganization: String,
+            coursesLocation: String,
+            coursesStartDate: String,
+            coursesEndDate: String,
+        }
+    ],
+    projects: [
+        {
+            projectsTitle: String,
+            projectsDescription: String,
+            projectsStartDate: String,
+            projectsEndDate: String,
+            projectsLink: String,
+            githubProfileLink: String,
+        }
+    ],
+    skills: [],
+    accomplishments: [
+        {
+            accomplishmentDescription:String, 
+        }
+    ],
+},

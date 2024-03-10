@@ -22,6 +22,7 @@ router.get("/", homepage);
 
 // POST /Student 
 router.post("/student", isAuthenticated, currentUser);
+
 // POST / Student /signup
 router.post("/student/signup", studentsignup)
 
@@ -34,8 +35,8 @@ router.get("/student/signout", isAuthenticated, studentsignout)
 // POST / Student /Send Mail
 router.post("/student/send-mail", studentsendmail)
 
-// GET / Student /Forget-link/:studentid
-router.get("/student/forget-link/:id", studentforgetlink);
+// post / Student /Forget-link/:studentid
+router.post("/student/forget-link/:id", studentforgetlink);
 
 // POST / Student /reset-password/studentid
 router.post("/student/reset-password/:id", isAuthenticated, studentresetpassword);
